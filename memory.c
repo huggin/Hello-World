@@ -1,6 +1,9 @@
 #include<stdio.h>
 #include<malloc.h>
 #include<unistd.h>
+
+#include "add.h"
+
 int bss_var;
 int data_var0=1;
 int main(int argc,char **argv)
@@ -26,5 +29,8 @@ int main(int argc,char **argv)
   printf("Heap Location:\n");
   void* p = malloc(4);
   printf("\tNew end of heap:%p\n",p);
-return 0;
- }
+  printf("\tAddress of the printf:%p\n", &printf);
+  printf("\tAddress of add:%p\n", &add);
+
+  return 0;
+}
